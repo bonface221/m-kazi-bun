@@ -1,0 +1,13 @@
+version: "3"
+services:
+  web:
+    ports:
+      - "3000:3000"
+    build: .
+    depends_on:
+      - redis
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+
+  redis:
+    image: "redis:7-alpine"
