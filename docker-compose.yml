@@ -2,7 +2,7 @@ version: "3"
 services:
   web:
     ports:
-      - "3000:3000"
+      - "3031:3000"
     build: .
     depends_on:
       - redis
