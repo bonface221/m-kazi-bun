@@ -13,7 +13,13 @@ const app = new Elysia()
       body: "Internal Server Error",
     };
   })
-  .get("/", () => "Hello Elysia")
+  .post("/", ({ body }) => {
+    console.log(body);
+    return {
+      statusCode: 200,
+      body: "Hello World",
+    };
+  })
   .post(
     "/ussd",
     ({ body }) => {
